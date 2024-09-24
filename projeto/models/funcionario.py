@@ -21,7 +21,7 @@ class Funcionario(Fisica,ABC):
         if salario < 0:
             raise ValueError ("O salario deve ser maior que zero")
         if not isinstance(salario,float):
-            raise TypeError("Digite um numero valido")
+            raise TypeError("Digite um salario valido")
         return salario
     
    def __str__(self) -> str:

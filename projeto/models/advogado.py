@@ -5,7 +5,8 @@ from projeto.models.enum.setor import Setor
 from projeto.models.funcionario import Funcionario
 
 class Advogado (Funcionario):
-   def __init__(self, id: int, nome: str, telefone: str, email: str, endereco: Endereco, sexo: Sexo, estadoCivil: EstadoCivil, dataNascimento: str, cpf: str, rg: str, matricula: str, setor: Setor, salario: float,oab:str) -> None:
+   def __init__(self, id: int, nome: str, telefone: str, email: str, 
+                endereco: Endereco, sexo: Sexo, estadoCivil: EstadoCivil, dataNascimento: str, cpf: str, rg: str, matricula: str, setor: Setor, salario: float,oab:str) -> None:
       self.oab= oab
       super().__init__(id,nome, telefone, email, endereco, sexo, estadoCivil, dataNascimento, cpf, rg, matricula, setor, salario)
 

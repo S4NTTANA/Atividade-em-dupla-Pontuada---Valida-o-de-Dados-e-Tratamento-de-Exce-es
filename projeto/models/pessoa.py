@@ -8,14 +8,14 @@ class Pessoa(ABC):
         self.telefone = telefone
         self.email = email
         self.endereco = endereco
-
    
     def _Verifica__Id(self,id:int)-> int: 
         if not isinstance (id,int): 
-            raise TypeError("Digite um numero inteiro")
+            raise TypeError("Digite um id valido")
         return id
         
-    
+
+
     def __str__(self) -> str:
         return (
                 f"\nId: {self.id}"
