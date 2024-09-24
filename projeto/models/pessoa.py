@@ -9,13 +9,11 @@ class Pessoa(ABC):
         self.email = email
         self.endereco = endereco
 
-    @abstractmethod 
-    def _Verifica__Id(self,id): 
-        if id < 0: 
-            raise ValueError("O id não pode ser negativo")
-        if isinstance (id,int):
+   
+    def _Verifica__Id(self,id:int)-> int: 
+        if not isinstance (id,int): 
             raise TypeError("Digite um numero inteiro")
-        return id 
+        return id
         
     
     def __str__(self) -> str:
