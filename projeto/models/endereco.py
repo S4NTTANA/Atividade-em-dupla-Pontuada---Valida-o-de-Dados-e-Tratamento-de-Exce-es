@@ -7,7 +7,7 @@ class Endereco():
         self.complemento = complemento
         self.cep = cep
         self.cidade = cidade
-        self.uf = unidade_federativa
+        self.uf = uf
 
     def __str__(self) -> str:
         return (

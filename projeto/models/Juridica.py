@@ -6,7 +6,7 @@ class Juridica(Pessoa,ABC):
     super().__init__(id, nome, telefone, email, endereco)
     self.cnpj= cnpj
     self.inscricaoEstadual= inscricaoEstadual
-    super().__init__(nome, telefone, email, endereco)
+    
     
   def __str__(self) -> str:
     return super().__str__() + f"\ncnpj{self.cnpj} \ninscriçãoEstadual{self.inscricaoEstadual}"

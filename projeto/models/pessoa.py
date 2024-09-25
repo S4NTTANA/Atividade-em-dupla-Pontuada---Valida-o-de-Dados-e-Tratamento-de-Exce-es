@@ -12,10 +12,11 @@ class Pessoa(ABC):
     def _Verifica__Id(self,id:int)-> int: 
         if not isinstance (id,int): 
             raise TypeError("Digite um id valido")
+        if id < 0:
+            raise ValueError("O id nao pode ser negativo")
         return id
         
-
-
+   
     def __str__(self) -> str:
         return (
                 f"\nId: {self.id}"
