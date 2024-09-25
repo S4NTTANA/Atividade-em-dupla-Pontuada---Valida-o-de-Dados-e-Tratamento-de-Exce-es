@@ -7,7 +7,7 @@ class Prestacaodeservicos(Juridica):
         self.contratoInicio= contratoInicio
         self.contratoFim = contratoFim
         
-        super().__init__(id,nome, telefone, email, endereco, cnpj, inscricaoEstadual,contratoInicio,contratoFim)
+        #super().__init__(id,nome, telefone, email, endereco, cnpj, inscricaoEstadual,contratoInicio,contratoFim)
     def __str__(self) -> str:
         return super().__str__() + f"\ncontratoInicio:{self.contratoInicio} \ncontratoFim{self.contratoFim}"
     def _Verifica__Id(self, id):

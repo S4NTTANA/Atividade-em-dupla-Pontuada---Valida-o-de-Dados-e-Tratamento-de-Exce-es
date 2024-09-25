@@ -4,12 +4,14 @@ from projeto.models.enum.unidade_federativa import UnidadeFederativa
 from projeto.models.prestacaodeServico import Prestacaodeservicos
 @pytest.fixture
 def pretacao_valida():
-    prestacao01= Prestacaodeservicos(10,"Brama","+718889","Brama@",Endereco ("Rua A","57","Terrio","4047","Salvador",UnidadeFederativa.SAO_PAULO),"4441","bahia","10-02","10-08")
+    prestacao01= Prestacaodeservicos(10,"Brama","+718889","Brama@",
+                                    Endereco ("Rua A","57","Terrio","4047","Salvador",UnidadeFederativa.SAO_PAULO),"4441","bahia","10-02","10-08")
     return prestacao01
 
 def test_id_negativo(pretacao_valida):
     with pytest.raises (ValueError,match= "O id nao pode ser negativo"):
-        Prestacaodeservicos(-10,"Brama","+718889","Brama@",Endereco ("Rua A","57","Terrio","4047","Salvador",UnidadeFederativa.SAO_PAULO),"4441","bahia","10-02","10-2")
+        Prestacaodeservicos(-10,"Brama","+718889","Brama@",
+                            Endereco ("Rua A","57","Terrio","4047","Salvador",UnidadeFederativa.SAO_PAULO),"4441","bahia","10-02","10-2")
         
 def test_id_valido(pretacao_valida):
     assert pretacao_valida.id == 10
@@ -45,10 +47,10 @@ def test_unidadeFederativa_valido(pretacao_valida):
 
 
 def test_cnph_valido(pretacao_valida):
-    assert pretacao_valida.cnpj == "741545"
+    assert pretacao_valida.cnpj == "4441"
 
 def test_inscricaoestadual_valido(pretacao_valida):
-    assert pretacao_valida.inscricaoEstadual == "Bahia salvador"
+    assert pretacao_valida.inscricaoEstadual == "bahia"
 
 def test_contratoinicio_valido(pretacao_valida):
     assert pretacao_valida.contratoInicio == "10-02"

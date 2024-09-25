@@ -15,7 +15,7 @@ class Funcionario(Fisica,ABC):
        self.matricula = matricula
        self.setor= setor
        self.salario = self._verifica_salario(salario)
-       super().__init__(nome, telefone, email, endereco,sexo)
+       super().__init__(id, nome, telefone, email, endereco, sexo, estadoCivil, dataNascimento)
    
    def _verifica_salario(self,salario:float)->float:
         if salario < 0:

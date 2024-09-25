@@ -13,9 +13,68 @@ def advogado_exemplo():
         Endereco("Rua a", "57", "térreo", "404560", "Salvador", UnidadeFederativa.BAHIA), 
         Sexo.MASCULINO, EstadoCivil.DIVORCIADO, 
         "04/06/2004", "117.556", "555256", "0022", 
-        Setor.JURIDICO, 1500, "5555"
+        Setor.JURIDICO, 1500.0, "5555"
     )
     return advogado_1
+
+
+def test_advogado_valido(advogado_exemplo):
+    assert advogado_exemplo.id == 1
+
+def test_advogado_exemplo(advogado_exemplo):
+    assert advogado_exemplo.nome == "Pedro"
+
+def test_advogado_exemplo(advogado_exemplo):
+    assert advogado_exemplo.telefone == "55565"
+
+def test_advogado_exemplo(advogado_exemplo):
+    assert advogado_exemplo.email == "pedro@"
+
+def test_advogado_exemplo(advogado_exemplo):
+    assert advogado_exemplo.endereco.logradouro == "Rua a"
+
+def test_advogado_exemplo(advogado_exemplo):
+    assert advogado_exemplo.endereco.numero == "67"
+
+def test_advogado_exemplo(advogado_exemplo):
+    assert advogado_exemplo.endereco.complemento == "térreo"
+
+def test_advogado_exemplo(advogado_exemplo):
+    assert advogado_exemplo.endereco.cep == "404560"
+
+def test_advogado_exemplo(advogado_exemplo):
+    assert advogado_exemplo.endereco.cidade == "Salvador"
+
+def test_advogado_exemplo(advogado_exemplo):
+    assert advogado_exemplo.endereco.uf == UnidadeFederativa.BAHIA
+
+def test_advogado_exemplo(advogado_exemplo):
+    assert advogado_exemplo.sexo == Sexo.MASCULINO
+
+def test_advogado_exemplo(advogado_exemplo):
+    assert advogado_exemplo.estadoCivil == EstadoCivil.DIVORCIADO
+
+def test_advogado_exemplo(advogado_exemplo):
+    assert advogado_exemplo.dataNascimento == "04/06/2004"
+
+def test_advogado_exemplo(advogado_exemplo):
+    assert advogado_exemplo.cpf == "117.556"
+
+def test_advogado_exemplo(advogado_exemplo):
+    assert advogado_exemplo.rg == "555256"
+
+def test_advogado_exemplo(advogado_exemplo):
+    assert advogado_exemplo.matricula == "0022"
+
+def test_advogado_exemplo(advogado_exemplo):
+    assert advogado_exemplo.setor == Setor.JURIDICO
+
+def test_advogado_exemplo(advogado_exemplo):
+    assert advogado_exemplo.salario == 1500.0
+
+def test_advogado_exemplo(advogado_exemplo):
+    assert advogado_exemplo.oab == "5555"
+
 
 
 
