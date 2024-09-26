@@ -76,7 +76,8 @@ def test_medico_exemplo(medico_exemplo):
     assert medico_exemplo.crm == "5555"
 
 
-def test_verifica_Id_advogado():
+
+def test_verifica_Id_tipo_advogado():
     with pytest.raises(TypeError, match="Digite um id valido"):
         Medico(
             "um", "matheus", "55565", "pedro@", 
@@ -85,6 +86,17 @@ def test_verifica_Id_advogado():
             "04/06/2004", "117.556", "555256", "0022", 
             Setor.JURIDICO, 1500, "5555"
         )
+
+def test_verifica_Id_negativo_advogado():
+    with pytest.raises(ValueError, match="O id nao pode ser negativo"):
+        Medico(
+            -1, "matheus", "55565", "pedro@", 
+            Endereco("Rua a", "57", "térreo", "404560", "Salvador", UnidadeFederativa.BAHIA), 
+            Sexo.MASCULINO, EstadoCivil.VIUVO, 
+            "04/06/2004", "117.556", "555256", "0022", 
+            Setor.JURIDICO, 1500, "5555"
+        )
+
 def test_verifica_salario_tipo_advogado():
       with pytest.raises(TypeError, match= "Digite um salario valido"):
             Medico(

@@ -7,6 +7,10 @@ class Cliente(Fisica):
     def __init__(self, id: int, nome: str, telefone: str, email: str, endereco: Endereco, sexo: Sexo, estadoCivil: EstadoCivil, dataNascimento: str,protocolo:int) -> None:
         self.protocolo = protocolo
         super().__init__(id, nome, telefone, email, endereco, sexo, estadoCivil, dataNascimento)
+    
+    def _Verifica__Id(self,id:int)-> int: 
+        return super()._Verifica__Id(id)
+  
     def __str__(self) -> str:
         return super().__str__() + f"\nProtocolo{self.protocolo}"
     

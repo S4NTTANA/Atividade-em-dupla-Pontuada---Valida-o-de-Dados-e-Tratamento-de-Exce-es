@@ -12,7 +12,12 @@ def test_id_negativo(pretacao_valida):
     with pytest.raises (ValueError,match= "O id nao pode ser negativo"):
         Prestacaodeservicos(-10,"Brama","+718889","Brama@",
                             Endereco ("Rua A","57","Terrio","4047","Salvador",UnidadeFederativa.SAO_PAULO),"4441","bahia","10-02","10-2")
-        
+
+def test_id_tipo_prestacao_de_servicos(pretacao_valida):
+    with pytest.raises (TypeError,match= "Digite um id valido"):
+        Prestacaodeservicos("10","Brama","+718889","Brama@",
+                            Endereco ("Rua A","57","Terrio","4047","Salvador",UnidadeFederativa.SAO_PAULO),"4441","bahia","10-02","10-2")
+
 def test_id_valido(pretacao_valida):
     assert pretacao_valida.id == 10
       

@@ -78,6 +78,15 @@ def test_advogado_exemplo(advogado_exemplo):
 
 
 
+def test_verifica_Id_negativo_advogado():
+    with pytest.raises(ValueError, match="O id nao pode ser negativo"):
+        Advogado(
+            -1, "Pedro", "55565", "pedro@", 
+            Endereco("Rua a", "57", "térreo", "404560", "Salvador", UnidadeFederativa.BAHIA), 
+            Sexo.MASCULINO, EstadoCivil.DIVORCIADO, 
+            "04/06/2004", "117.556", "555256", "0022", 
+            Setor.JURIDICO, 1500, "5555"
+        )
 
 def test_verifica_Id_advogado():
     with pytest.raises(TypeError, match="Digite um id valido"):

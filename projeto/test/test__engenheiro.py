@@ -76,7 +76,7 @@ def test_engenheiro_exemplo(engenheiro_exemplo):
     assert engenheiro_exemplo.crea == "5555"
 
 
-def test_verifica_Id_medico():
+def test_verifica_oid_medico():
     with pytest.raises(TypeError, match="Digite um id valido"):
         Engenheiro(
             "um", "matheus", "55565", "pedro@", 
@@ -85,6 +85,16 @@ def test_verifica_Id_medico():
             "04/06/2004", "117.556", "555256", "0022", 
             Setor.SAUDE, 1500, "5555"
         )
+def test_verifica_id_negativo_medico():
+    with pytest.raises(ValueError, match="O id nao pode ser negativo"):
+        Engenheiro(
+            -1, "matheus", "55565", "pedro@", 
+            Endereco("Rua a", "57", "térreo", "404560", "rio de janeiro", UnidadeFederativa.RIO_DE_JANEIRO), 
+            Sexo.FEMININO, EstadoCivil.DIVORCIADO, 
+            "04/06/2004", "117.556", "555256", "0022", 
+            Setor.SAUDE, 1500, "5555"
+        )
+
 def test_verifica_salario_tipo_medico():
     with pytest.raises(TypeError, match= "Digite um salario valido"):
         Engenheiro(

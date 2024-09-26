@@ -8,6 +8,10 @@ def fornecedor_valido():
     fornecedor01= Fornecedor (10,"Brama","+718889","Brama@",Endereco ("Rua A","57","Terrio","4047","Salvador",UnidadeFederativa.RIO_DE_JANEIRO),"741545","Bahia salvador","ferro")
     return fornecedor01
 
+def test_verifica_id_tipo_cliente():
+    with pytest.raises(TypeError, match="Digite um id valido"):
+        Fornecedor ("10","Brama","+718889","Brama@",Endereco ("Rua A","57","Terrio","4047","Salvador",UnidadeFederativa.RIO_DE_JANEIRO),"741545","Bahia salvador","ferro")
+
 def test_id_negativo(fornecedor_valido):
     with pytest.raises (ValueError,match= "O id nao pode ser negativo"):
         Fornecedor (-10,"Brama","+718889","Brama@",Endereco ("Rua A","57","Terrio","4047","Salvador",UnidadeFederativa.RIO_DE_JANEIRO),"741545","Bahia salvador","ferro")

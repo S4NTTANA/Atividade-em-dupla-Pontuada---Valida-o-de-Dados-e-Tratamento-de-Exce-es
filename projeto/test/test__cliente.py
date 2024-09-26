@@ -11,6 +11,15 @@ def cliente_valido():
                        Sexo.MASCULINO, EstadoCivil.SOLTEIRO, "25/12/2000", 8922)
     return cliente1
 
+def test_verifica_id_cliente():
+    with pytest.raises(TypeError, match="Digite um id valido"):
+        Cliente ("456789", "Faustao", "4002", "faustin@gmail.com", Endereco("Rua A", "55", "casa", "4556", "Salvador", UnidadeFederativa.BAHIA),
+                       Sexo.MASCULINO, EstadoCivil.SOLTEIRO, "25/12/2000", 8922)
+        
+def test_verifica_id_negativo_cliente():
+    with pytest.raises(ValueError,match="O id nao pode ser negativo"):
+        Cliente(-456789, "Faustao", "4002", "faustin@gmail.com", Endereco("Rua A", "55", "casa", "4556", "Salvador", UnidadeFederativa.BAHIA),
+                       Sexo.MASCULINO, EstadoCivil.SOLTEIRO, "25/12/2000", 8922)
 def test_cliente_valido(cliente_valido):
     assert cliente_valido.id == 456789
 
